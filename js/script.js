@@ -133,7 +133,7 @@ function calcStoryRank(story) {
 // 分身
 function calconlineGhostRank(onlineGhost) {
     if (onlineGhost < 30) {
-        return 30 - story; // 入力値が30未満なら差を返す
+        return 30 - onlineGhost; // 入力値が30未満なら差を返す
     } else {
         // 最大値を探す
         let index = -1;
