@@ -1,0 +1,229 @@
+/* 全体 */
+body {
+    font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+    /* 明るい背景 */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ヘッダー */
+header {
+    background: linear-gradient(90deg, #00aaff, #66ccff);
+    /* 明るいブルーグラデーション */
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* メイン */
+main {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+main h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+
+main h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+/* リンクリスト */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    /* ← 横並び防止 */
+}
+
+ul li {
+    display: block;
+    /* 各liを縦に並べる */
+    margin: 0.5em 0;
+    /* 項目同士の間隔 */
+}
+
+ul li a {
+    display: block;
+    width: 100%;
+    /* モバイルは全幅 */
+    max-width: 400px;
+    /* PCは適度な横幅 */
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    background: #00aaff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 170, 255, 0.3);
+}
+
+ul li a:hover {
+    background: #0088cc;
+    box-shadow: 0 6px 12px rgba(0, 136, 204, 0.4);
+    transform: translateY(-2px);
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: #666;
+    border-top: 1px solid #ddd;
+    margin-top: 2rem;
+}
+
+/* フォーム全体を中央寄せ */
+form#rankForm {
+    max-width: 400px;
+    /* フォームの最大幅 */
+    margin: 0 auto;
+    /* 左右中央寄せ */
+    padding: 1rem;
+    /* 内側余白 */
+    background: #f0f8ff;
+    /* 任意: 少し明るい背景色で見やすく */
+    border-radius: 8px;
+    /* 角丸 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 影で浮かせる */
+}
+
+/* ラベルと入力を縦並びに揃える */
+form#rankForm label,
+form#rankForm input,
+form#rankForm p {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.3rem;
+}
+
+/* 入力フィールド（テキストボックス・数値入力） */
+form#rankForm input {
+    padding: 0.7rem;
+    /* 内側の余白を広げて「太く」見せる */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    /* 文字も大きくして見やすく */
+    box-sizing: border-box;
+    /* 幅の計算にpaddingを含める */
+}
+
+/* フォーム内のpタグの下に区切り線 */
+form#rankForm p {
+    border-bottom: 1px solid #ccc;
+    /* 線の太さ・色を指定 */
+    padding-bottom: 0.5rem;
+    /* 線と文字の間に余白 */
+    margin-bottom: 0.8rem;
+    /* pタグ同士の間隔 */
+}
+
+/* フォーム内のspan文字を強調 */
+form#rankForm span {
+    font-weight: bold;
+    /* 太字にする */
+    background-color: #fff3e0;
+    /* 背景色を薄いオレンジに */
+    padding: 0 0.2rem;
+    /* 文字の周りに少し余白 */
+    border-radius: 3px;
+    /* 角を丸くする */
+}
+
+
+/* ボタンも中央寄せ */
+form#rankForm button {
+    display: block;
+    margin: 1rem auto 0 auto;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    background: #00aaff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form#rankForm button:hover {
+    background: #0088cc;
+}
+
+
+/* ===== レスポンシブ対応 ===== */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    main h2 {
+        font-size: 1rem;
+    }
+
+    ul li a {
+        font-size: 0.95rem;
+        padding: 0.7rem 1rem;
+    }
+
+    form#rankForm {
+        padding: 1rem;
+        /* 内側余白を少し小さく */
+    }
+
+    form#rankForm label,
+    form#rankForm input,
+    form#rankForm p {
+        font-size: 0.95rem;
+        /* 文字サイズを少し縮小 */
+    }
+
+    form#rankForm button {
+        font-size: 0.95rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+@media (min-width: 900px) {
+    main {
+        text-align: left;
+        /* PCは左寄せレイアウトも自然 */
+    }
+
+    ul li {
+        margin: 0.5rem 0;
+    }
+}
