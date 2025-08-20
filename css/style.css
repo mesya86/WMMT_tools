@@ -4,7 +4,6 @@ body {
     margin: 0;
     padding: 0;
     background: #f8f9fa;
-    /* 明るい背景 */
     color: #333;
     line-height: 1.6;
 }
@@ -12,7 +11,6 @@ body {
 /* ヘッダー */
 header {
     background: linear-gradient(90deg, #00aaff, #66ccff);
-    /* 明るいブルーグラデーション */
     padding: 1rem 2rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     position: sticky;
@@ -74,9 +72,8 @@ ul li {
 ul li a {
     display: block;
     width: 100%;
-    /* モバイルは全幅 */
-    max-width: 400px;
-    /* PCは適度な横幅 */
+    max-width: 100%;
+    box-sizing: border-box;
     margin: 0 auto;
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
@@ -114,7 +111,6 @@ form#rankForm {
     padding: 1rem;
     /* 内側余白 */
     background: #f0f8ff;
-    /* 任意: 少し明るい背景色で見やすく */
     border-radius: 8px;
     /* 角丸 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
