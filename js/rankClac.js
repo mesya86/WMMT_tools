@@ -36,7 +36,7 @@ function calcPoint(first, second, third, fourth) {
 
 // 段位判定
 function getRankCategory(totalPoint) {
-    for (let i = 1; i < rankMaster.length; i++) {
+    for (let i = rankMaster.length - 1; i >= 1; i--) {
         const [_, r, g, k] = rankMaster[i];
         if (totalPoint >= k) return 3;
         if (totalPoint >= g) return 2;
@@ -44,6 +44,7 @@ function getRankCategory(totalPoint) {
     }
     return 0;
 }
+
 
 // 現在段位（レベル）
 function getLevel(totalPoint) {
