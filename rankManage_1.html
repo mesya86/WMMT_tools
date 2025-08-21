@@ -18,24 +18,24 @@
         <!-- 入力フォーム -->
         <form id="rankForm" method="post">
             <!-- ランク -->
-            <p>現在のランク: <span id="rankNow">N</span>級</p>
+            <p>現在のランク: <span id="rankNow">-</span>級</p>
 
             <!-- ストーリー -->
             <label for="story">クリア総数</label>
-            <input type="number" id="story" name="story" value="0" required>
-            <p>次のランクまで残り: <span id="remainingStoryCount">10</span>話</p>
+            <input type="number" id="story" name="story" required>
+            <p>次のランクまで残り: <span id="remainingStoryCount">-</span>話</p>
 
             <!-- 分身 -->
             <label for="totalDefeated">累計撃破数</label>
-            <input type="number" id="totalDefeated" name="totalDefeated" value="0" required>
+            <input type="number" id="totalDefeated" name="totalDefeated" required>
             <label for="ghostDefeated">分身撃破数</label>
-            <input type="number" id="ghostDefeated" name="ghostDefeated" value="0" required>
-            <p>次のランクまで残り: <span id="remainingOnlineGhostCount">20</span>撃破</p>
+            <input type="number" id="ghostDefeated" name="ghostDefeated" required>
+            <p>次のランクまで残り: <span id="remainingOnlineGhostCount">-</span>撃破</p>
 
             <!-- 乱入 -->
             <label for="VSPlayer">撃墜数</label>
-            <input type="number" id="VSPlayer" name="VSPlayer" value="0" required>
-            <p>次のランクまで残り: <span id="remainingVSPlayer">20</span>撃墜</p>
+            <input type="number" id="VSPlayer" name="VSPlayer" required>
+            <p>次のランクまで残り: <span id="remainingVSPlayer">-</span>撃墜</p>
 
             <button type="submit">算出する</button>
         </form>
@@ -46,4 +46,4 @@
 </body>
 
 </html>
-<script src="js/script_1.js"></script>
+<script src="js/rankManage_1.js"></script>

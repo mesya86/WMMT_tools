@@ -179,6 +179,33 @@ form#rankForm button:hover {
     background: #0088cc;
 }
 
+/* 結果表示エリア */
+#result {
+    max-width: 400px;
+    /* フォームと揃える */
+    margin: 1.5rem auto;
+    /* 中央寄せ＋上下余白 */
+    padding: 1rem 1.2rem;
+    /* 内側余白 */
+    background: #e0f7fa;
+    /* 薄い水色背景 */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* 結果の各行 */
+#result p {
+    margin: 0.8rem 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* 結果の数値部分 */
+#result span {
+    font-weight: bold;
+    border-radius: 4px;
+}
 
 /* ===== レスポンシブ対応 ===== */
 @media (max-width: 600px) {
@@ -210,6 +237,20 @@ form#rankForm button:hover {
     form#rankForm button {
         font-size: 0.95rem;
         padding: 0.6rem 1.2rem;
+    }
+
+    #result {
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    #result p {
+        font-size: 0.95rem;
+    }
+
+    #result span {
+        padding: 0 0.2rem;
+        font-size: 0.95rem;
     }
 }
 
