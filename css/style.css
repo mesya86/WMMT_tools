@@ -59,14 +59,11 @@ ul {
     padding: 0;
     margin: 0;
     display: block;
-    /* ← 横並び防止 */
 }
 
 ul li {
     display: block;
-    /* 各liを縦に並べる */
     margin: 0.5em 0;
-    /* 項目同士の間隔 */
 }
 
 ul li a {
@@ -105,16 +102,11 @@ footer {
 /* フォーム全体を中央寄せ */
 form#rankForm {
     max-width: 400px;
-    /* フォームの最大幅 */
     margin: 0 auto;
-    /* 左右中央寄せ */
     padding: 1rem;
-    /* 内側余白 */
     background: #f0f8ff;
     border-radius: 8px;
-    /* 角丸 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* 影で浮かせる */
 }
 
 /* ラベルと入力を縦並びに揃える */
@@ -129,35 +121,25 @@ form#rankForm p {
 /* 入力フィールド（テキストボックス・数値入力） */
 form#rankForm input {
     padding: 0.7rem;
-    /* 内側の余白を広げて「太く」見せる */
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
-    /* 文字も大きくして見やすく */
     box-sizing: border-box;
-    /* 幅の計算にpaddingを含める */
 }
 
 /* フォーム内のpタグの下に区切り線 */
 form#rankForm p {
     border-bottom: 1px solid #ccc;
-    /* 線の太さ・色を指定 */
     padding-bottom: 0.5rem;
-    /* 線と文字の間に余白 */
     margin-bottom: 0.8rem;
-    /* pタグ同士の間隔 */
 }
 
 /* フォーム内のspan文字を強調 */
 form#rankForm span {
     font-weight: bold;
-    /* 太字にする */
     background-color: #fff3e0;
-    /* 背景色を薄いオレンジに */
     padding: 0 0.2rem;
-    /* 文字の周りに少し余白 */
     border-radius: 3px;
-    /* 角を丸くする */
 }
 
 
@@ -182,13 +164,9 @@ form#rankForm button:hover {
 /* 結果表示エリア */
 #result {
     max-width: 400px;
-    /* フォームと揃える */
     margin: 1.5rem auto;
-    /* 中央寄せ＋上下余白 */
     padding: 1rem 1.2rem;
-    /* 内側余白 */
     background: #e0f7fa;
-    /* 薄い水色背景 */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: left;
@@ -224,14 +202,12 @@ form#rankForm button:hover {
 
     form#rankForm {
         padding: 1rem;
-        /* 内側余白を少し小さく */
     }
 
     form#rankForm label,
     form#rankForm input,
     form#rankForm p {
         font-size: 0.95rem;
-        /* 文字サイズを少し縮小 */
     }
 
     form#rankForm button {
@@ -249,7 +225,6 @@ form#rankForm button:hover {
     }
 
     #result span {
-        padding: 0 0.2rem;
         font-size: 0.95rem;
     }
 }
@@ -257,7 +232,6 @@ form#rankForm button:hover {
 @media (min-width: 900px) {
     main {
         text-align: left;
-        /* PCは左寄せレイアウトも自然 */
     }
 
     ul li {
