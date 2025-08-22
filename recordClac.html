@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>湾岸ミッドナイト　便利ツール - 戦績計算</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.html">湾岸ミッドナイト　便利ツール</a></h1>
+    </header>
+    <main>
+        <h1>戦績計算</h2>
+            <h2>記録を入力することで、戦績を計算します</h2>
+            <!-- 入力フォーム -->
+            <form id="rankForm" method="post">
+                <!-- 撃墜数 -->
+                <label for="downs">撃墜数</label>
+                <input type="number" id="downs" name="downs" required>
+
+                <!-- 対戦数 -->
+                <label for="matches">対戦数</label>
+                <input type="number" id="matches" name="matches" required>
+
+                <button type="submit">算出する</button>
+            </form>
+
+            <!-- 結果表示エリア -->
+            <div id="result">
+                <p>戦績: <span id="record"></span></p>
+            </div>
+    </main>
+    <footer>
+        <!-- フッター情報 -->
+    </footer>
+</body>
+
+</html>
+<script src="js/recordClac.js"></script>
