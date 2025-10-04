@@ -35,23 +35,24 @@
     <main>
         <h1>戦績計算</h2>
             <h2>記録を入力することで、戦績を計算します</h2>
-            <!-- 入力フォーム -->
-            <form id="rankForm" method="post">
-                <!-- 撃墜数 -->
-                <label for="downs">撃墜数</label>
-                <input type="number" id="downs" name="downs" required>
+            <h2><b id="requiredField">*</b>は必須入力です</h3>
+                <!-- 入力フォーム -->
+                <form id="rankForm" method="post">
+                    <!-- 撃墜数 -->
+                    <label for="downs">撃墜数<b id="requiredField">*</b></label>
+                    <input type="number" id="downs" name="downs" required>
 
-                <!-- 対戦数 -->
-                <label for="matches">対戦数</label>
-                <input type="number" id="matches" name="matches" required>
+                    <!-- 対戦数 -->
+                    <label for="matches">対戦数<b id="requiredField">*</b></label>
+                    <input type="number" id="matches" name="matches" required>
 
-                <button type="submit">算出する</button>
-            </form>
+                    <button type="submit">算出する</button>
+                </form>
 
-            <!-- 結果表示エリア -->
-            <div id="result">
-                <p>戦績: <span id="record"></span></p>
-            </div>
+                <!-- 結果表示エリア -->
+                <div id="result">
+                    <p>戦績: <span id="record"></span></p>
+                </div>
     </main>
     <footer>
         <!-- フッター情報 -->

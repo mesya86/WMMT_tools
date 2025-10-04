@@ -147,7 +147,7 @@ main {
 
 main h1 {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     color: #555;
 }
 
@@ -155,7 +155,7 @@ main h1 {
 main h2 {
     text-align: center;
     font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.0rem;
     color: #555;
 }
 
@@ -292,6 +292,11 @@ form#rankForm button:hover {
     border-radius: 4px;
 }
 
+/* 必須入力記号 */
+#requiredField {
+    color: #ff0000;
+}
+
 /* ===== レスポンシブ対応 ===== */
 @media (max-width: 600px) {
     header {
@@ -300,7 +305,7 @@ form#rankForm button:hover {
     }
 
     header h1 {
-        font-size: 1.3rem;
+        font-size: 1.0rem;
     }
 
     .menu-toggle {
@@ -335,7 +340,7 @@ form#rankForm button:hover {
     }
 
     main h2 {
-        font-size: 1rem;
+        font-size: 0.5rem;
     }
 
     .menu {
