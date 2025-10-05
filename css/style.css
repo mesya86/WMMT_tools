@@ -297,6 +297,21 @@ form#rankForm button:hover {
     color: #ff0000;
 }
 
+/* 個別算出ボタン */
+form#rankForm button.separateBtn {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.6rem;
+    background: #00ccff;
+    box-shadow: 0 2px 4px rgba(0, 170, 255, 0.3);
+}
+
+/* ホバー時 */
+form#rankForm button.separateBtn:hover {
+    background: #0099cc;
+    box-shadow: 0 3px 6px rgba(0, 136, 204, 0.4);
+    transform: translateY(-1px);
+}
+
 /* ===== レスポンシブ対応 ===== */
 @media (max-width: 600px) {
     header {
@@ -394,6 +409,11 @@ form#rankForm button:hover {
 
     #result span {
         font-size: 0.95rem;
+    }
+
+    form#rankForm button.smallBtn {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.6rem;
     }
 }
 

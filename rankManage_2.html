@@ -35,35 +35,52 @@
     <main>
         <h1>ランク管理(5DX+以前)</h1>
         <h2>記録を入力することで、ランクアップまでのカウントを提示します</h2>
-        <h2><b id="requiredField">*</b>は必須入力です</h3>
-            <!-- 入力フォーム -->
-            <form id="rankForm" method="post">
 
-                <!-- ストーリー -->
-                <label for="story">クリア総数</label>
-                <input type="number" id="story" name="story">
-                <p>次のランクまで残り: <span id="remainingStoryCount">-</span>話</p>
+        <!-- ボタン表示切替用 -->
+        <h2><input type="checkbox" id="toggleExtraBtn"><label for="toggleExtraBtn">個別算出を行う</label></h2>
 
-                <!-- 分身 -->
-                <label for="ghostDefeated">分身撃破数<b id="requiredField">*</b></label>
-                <input type="number" id="ghostDefeated" name="ghostDefeated" required>
-                <label for="totalDefeated">累計撃破数<b id="requiredField">*</b></label>
-                <input type="number" id="totalDefeated" name="totalDefeated" required>
-                <p>次のランクまで残り: <span id="remainingOnlineGhostCount">-</span>撃破</p>
+        <!-- 入力フォーム -->
+        <form id="rankForm" method="post">
 
-                <!-- 乱入 -->
-                <label for="VSPlayer">撃墜数</label>
-                <input type="number" id="VSPlayer" name="VSPlayer">
-                <p>次のランクまで残り: <span id="remainingVSPlayer">-</span>撃墜</p>
+            <!-- ストーリー -->
+            <label for="story">クリア総数</label>
+            <input type="number" id="story" name="story">
+            <p>
+                次のランクまで残り: <span id="remainingStoryCount">-</span>話
+                <!-- 表示切替されるボタン -->
+                <button id="storyBtn" class="separateBtn" type="button" style="display: none;">個別算出</button>
+            </p>
 
-                <button type="submit">算出する</button>
-            </form>
+            <!-- 分身 -->
+            <label for="ghostDefeated">分身撃破数<b id="requiredField">*</b></label>
+            <input type="number" id="ghostDefeated" name="ghostDefeated" required>
+            <label for="totalDefeated">累計撃破数<b id="requiredField">*</b></label>
+            <input type="number" id="totalDefeated" name="totalDefeated" required>
+            <p>
+                次のランクまで残り: <span id="remainingOnlineGhostCount">-</span>撃破
+                <!-- 表示切替されるボタン -->
+                <button id="ghostBtn" class="separateBtn" type="button" style="display: none;">個別算出</button>
+            </p>
+
+            <!-- 乱入 -->
+            <label for="VSPlayer">撃墜数</label>
+            <input type="number" id="VSPlayer" name="VSPlayer">
+            <p>次のランクまで残り: <span id="remainingVSPlayer">-</span>撃墜
+                <!-- 表示切替されるボタン -->
+                <button id="vsBtn" class="separateBtn" type="button" style="display: none;">個別算出</button>
+            </p>
+
+            <button type="submit">算出する</button>
+        </form>
     </main>
+
     <footer>
         <!-- フッター情報 -->
     </footer>
+
+    <script src="js/rankManage_2.js"></script>
+    <script src="js/menus.js"></script>
+    <script src="js/separateCalc.js"></script>
 </body>
 
 </html>
-<script src="js/rankManage_2.js"></script>
-<script src="js/menus.js"></script>
