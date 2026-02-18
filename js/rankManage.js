@@ -1,6 +1,6 @@
 /* マスタ */
 // ランク
-const rank = [
+/*const rank = [
     "N", "C9", "C8", "C7", "C6", "C5", "C4", "C3", "C2", "C1",
     "B9", "B8", "B7", "B6", "B5", "B4", "B3", "B2", "B1",
     "A9", "A8", "A7", "A6", "A5", "A4", "A3", "A2", "A1",
@@ -10,7 +10,7 @@ const rank = [
     "SSSS9", "SSSS8", "SSSS7", "SSSS6", "SSSS5", "SSSS4", "SSSS3", "SSSS2", "SSSS1",
     "SSSSS9", "SSSSS8", "SSSSS7", "SSSSS6", "SSSSS5", "SSSSS4", "SSSSS3", "SSSSS2", "SSSSS1",
     "SSSSSS"
-];
+];*/
 
 // ストーリー話数
 const storyCount = [
@@ -52,7 +52,7 @@ const VSPlayerCount = [
 
 /* メソッド */
 // ランク
-function getRank(story, onlineGhost, VSPlayer, storyCount, onlineGhostCount, VSPlayerCount, rank) {
+/*function getRank(story, onlineGhost, VSPlayer, storyCount, onlineGhostCount, VSPlayerCount, rank) {
     // 値以下の最大インデックスを返す
     function match(value, array) {
         for (let i = array.length - 1; i >= 0; i--) {
@@ -70,7 +70,7 @@ function getRank(story, onlineGhost, VSPlayer, storyCount, onlineGhostCount, VSP
     if (total > 74) { return "SSSSSS"; }
 
     return rank[total];
-}
+}*/
 
 
 // ストーリー
@@ -175,7 +175,6 @@ document.getElementById("rankForm").addEventListener("submit", function (event) 
     const remainingStoryEl = document.getElementById("remainingStoryCount");
     const remainingOnlineGhostEl = document.getElementById("remainingOnlineGhostCount");
     const remainingVSPlayerEl = document.getElementById("remainingVSPlayer");
-    const rankNowEl = document.getElementById("rankNow");
 
     try {
         const story = Number(document.getElementById("story").value);
@@ -192,7 +191,7 @@ document.getElementById("rankForm").addEventListener("submit", function (event) 
         if (remainingOnlineGhostEl) remainingOnlineGhostEl.textContent = remainingOnlineGhost.toString();
         if (remainingVSPlayerEl) remainingVSPlayerEl.textContent = remainingVSPlayer.toString();
 
-        const rankValue = getRank(story, onlineGhost, VSPlayer, storyCount, onlineGhostCount, VSPlayerCount, rank);
+        /*const rankValue = getRank(story, onlineGhost, VSPlayer, storyCount, onlineGhostCount, VSPlayerCount, rank);
         if (rankNowEl) {
             rankNowEl.textContent = rankValue.toString();
             if (rankValue === "SSSSSS") {
@@ -200,12 +199,12 @@ document.getElementById("rankForm").addEventListener("submit", function (event) 
                 remainingOnlineGhostEl.textContent = "-";
                 remainingVSPlayerEl.textContent = "-";
             }
-        }
+        }*/
     } catch (e) {
         // エラー時は文字列を直接代入する
         if (remainingStoryEl) remainingStoryEl.textContent = "-";
         if (remainingOnlineGhostEl) remainingOnlineGhostEl.textContent = "-";
         if (remainingVSPlayerEl) remainingVSPlayerEl.textContent = "-";
-        if (rankNowEl) rankNowEl.textContent = "SSSSSS";
+        /*if (rankNowEl) rankNowEl.textContent = "SSSSSS";*/
     }
 });
