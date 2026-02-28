@@ -2,85 +2,85 @@
 <html lang="ja">
 
 <head>
-    <meta charset="utf-8">
-    <title>湾岸ミッドナイト　便利ツール - ランク管理（5DX+以前）</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <title>湾岸ミッドナイト　便利ツール - ランク管理（5DX+以前）</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header>
-        <h1><a href="index.html">湾岸ミッドナイト　便利ツール</a></h1>
-        <!-- ハンバーガーメニュー -->
-        <nav class="navbar">
-            <div class="menu-toggle" id="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+  <header>
+      <h1><a href="index.html">湾岸ミッドナイト　便利ツール</a></h1>
+      <!-- ハンバーガーメニュー -->
+      <nav class="navbar">
+          <div class="menu-toggle" id="menu-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+      </nav>
+  </header>
 
-    <!-- オーバーレイ -->
-    <div id="overlay"></div>
+  <!-- オーバーレイ -->
+  <div id="overlay"></div>
 
-    <!-- スライドメニュー -->
-    <ul class="menu" id="menu">
-        <li><a href="rankManage2.html">ランク管理（5DX+以前）</a></li>
-        <li><a href="rankManage.html">ランク管理（6以降）</a></li>
-        <li><a href="rankClac.html">段位計算</a></li>
-        <li><a href="recordClac.html">戦績計算</a></li>
-    </ul>
+  <!-- スライドメニュー -->
+  <ul class="menu" id="menu">
+      <li><a href="rankManage2.html">ランク管理（5DX+以前）</a></li>
+      <li><a href="rankManage.html">ランク管理（6以降）</a></li>
+      <li><a href="rankClac.html">段位計算</a></li>
+      <li><a href="recordClac.html">戦績計算</a></li>
+  </ul>
 
-    <main>
-        <h1>ランク管理(5DX+以前)</h1>
-        <h2>記録を入力することで、ランクアップまでのカウントを提示します</h2>
+  <main>
+    <h1>ランク管理(5DX+以前)</h1>
+    <h2>記録を入力することで、ランクアップまでのカウントを提示します</h2>
 
-        <!-- ボタン表示切替用 -->
-        <h2><input type="checkbox" id="toggleExtraBtn"><label for="toggleExtraBtn">個別算出を行う</label></h2>
+    <!-- ボタン表示切替用 -->
+    <h2><input type="checkbox" id="toggleExtraBtn"><label for="toggleExtraBtn">個別算出を行う</label></h2>
 
-        <!-- 入力フォーム -->
-        <form id="rankForm" method="post">
+    <!-- 入力フォーム -->
+    <form id="rankForm" method="post">
 
-            <!-- ストーリー -->
-            <label for="story">クリア総数</label>
-            <input type="number" id="story" name="story">
-            <p>
-                次のランクまで残り: <span id="remainingStoryCount">-</span>話
-                <!-- 表示切替されるボタン -->
-                <button id="storyBtn" class="separateBtn" type="button" style="display: none;">個別算出</button>
-            </p>
+      <!-- ストーリー -->
+      <label for="story">クリア総数</label>
+      <input type="number" id="story" name="story">
+      <p>
+          次のランクまで残り: <span id="remainingStoryCount">-</span>話
+          <!-- 表示切替されるボタン -->
+          <button id="storyBtn" class="separateBtn" type="button" style="display: none;">個別算出</button>
+      </p>
 
-            <!-- 分身 -->
-            <label for="ghostDefeated">分身撃破数<b id="requiredField">*</b></label>
-            <input type="number" id="ghostDefeated" name="ghostDefeated" required>
-            <label for="totalDefeated">累計撃破数<b id="requiredField">*</b></label>
-            <input type="number" id="totalDefeated" name="totalDefeated" required>
-            <p>
-                次のランクまで残り: <span id="remainingOnlineGhostCount">-</span>撃破
-                <!-- 表示切替されるボタン -->
-                <button id="ghostBtn" class="separateBtn" type="button" style="display: none;">個別算出</button>
-            </p>
+      <!-- 分身 -->
+      <label for="ghostDefeated">分身撃破数<b id="requiredField">*</b></label>
+      <input type="number" id="ghostDefeated" name="ghostDefeated" required>
+      <label for="totalDefeated">累計撃破数<b id="requiredField">*</b></label>
+      <input type="number" id="totalDefeated" name="totalDefeated" required>
+      <p>
+          次のランクまで残り: <span id="remainingOnlineGhostCount">-</span>撃破
+          <!-- 表示切替されるボタン -->
+          <button id="ghostBtn" class="separateBtn" type="button" style="display: none;">個別算出</button>
+      </p>
 
-            <!-- 乱入 -->
-            <label for="VSPlayer">撃墜数</label>
-            <input type="number" id="VSPlayer" name="VSPlayer">
-            <p>次のランクまで残り: <span id="remainingVSPlayer">-</span>撃墜
-                <!-- 表示切替されるボタン -->
-                <button id="vsBtn" class="separateBtn" type="button" style="display: none;">個別算出</button>
-            </p>
+      <!-- 乱入 -->
+      <label for="VSPlayer">撃墜数</label>
+      <input type="number" id="VSPlayer" name="VSPlayer">
+      <p>次のランクまで残り: <span id="remainingVSPlayer">-</span>撃墜
+          <!-- 表示切替されるボタン -->
+          <button id="vsBtn" class="separateBtn" type="button" style="display: none;">個別算出</button>
+      </p>
 
-            <button type="submit">算出する</button>
-        </form>
-    </main>
+      <button type="submit">算出する</button>
+    </form>
+  </main>
 
-    <footer>
-        <!-- フッター情報 -->
-    </footer>
+  <footer>
+    <!-- フッター情報 -->
+  </footer>
 
-    <script src="js/rankManage2.js"></script>
-    <script src="js/menus.js"></script>
-    <script src="js/separateCalc.js"></script>
+  <script src="js/rankManage2.js"></script>
+  <script src="js/menus.js"></script>
+  <script src="js/separateCalc.js"></script>
 </body>
 
 </html>
