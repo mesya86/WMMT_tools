@@ -1,440 +1,525 @@
 /* 全体 */
 body {
-    font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #0b0e14;
-    color: #e0e0e0;
-    line-height: 1.6;
+  font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0b0e14;
+  color: #e0e0e0;
+  line-height: 1.6;
 }
 
 /* ヘッダー */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 2rem;
-    background: linear-gradient(135deg, #003366, #00aaff);
-    box-shadow: 0 4px 15px rgba(0, 170, 255, 0.4);
-    position: relative;
-    z-index: 10;
-    height: 70px;
-    border-bottom: 2px solid #00ffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: linear-gradient(135deg, #003366, #00aaff);
+  box-shadow: 0 4px 15px rgba(0, 170, 255, 0.4);
+  position: relative;
+  z-index: 10;
+  height: 70px;
+  border-bottom: 2px solid #00ffff;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 1.6rem;
-    text-align: center;
-    flex: 1;
+  margin: 0;
+  font-size: 1.6rem;
+  text-align: center;
+  flex: 1;
 }
 
 header h1 a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 900;
-    letter-spacing: 1px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 /* オーバーレイ */
 #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
 }
 
 /* オーバーレイ表示時 */
 #overlay.show {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* ハンバーガーボタン */
 .menu-toggle {
-    position: relative;
-    width: 30px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 6px;
-    cursor: pointer;
-    z-index: 1002;
-    padding: 5px 0;
+  position: relative;
+  width: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1002;
+  padding: 5px 0;
 }
 
 .menu-toggle span {
-    display: block;
-    height: 4px;
-    width: 100%;
-    background: #fff;
-    border-radius: 2px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* active クラスで X に変化 */
 .menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(7px, 7px);
+  transform: rotate(45deg) translate(7px, 7px);
 }
 
 .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
 
 .menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* スライドインメニュー */
 .navbar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .menu {
-    list-style: none;
-    padding: 20px;
-    margin: 0;
-    position: fixed;
-    top: 70px;
-    right: 0;
-    width: 250px;
-    height: calc(100% - 70px);
-    background: #161b22;
-    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 1001;
-    border-left: 1px solid #00ffff;
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  position: fixed;
+  top: 70px;
+  right: 0;
+  width: 250px;
+  height: calc(100% - 70px);
+  background: #161b22;
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 1001;
+  border-left: 1px solid #00ffff;
 }
 
 .menu li {
-    margin: 3px 0;
+  margin: 3px 0;
 }
 
 .menu li a {
-    text-decoration: none;
-    color: #fff;
-    padding: 8px;
-    border-bottom: 1px solid #333;
-    border-radius: 0;
-    transition: background 0.2s;
+  text-decoration: none;
+  color: #fff;
+  padding: 8px;
+  border-bottom: 1px solid #333;
+  border-radius: 0;
+  transition: background 0.2s;
 }
 
 .menu li a:hover {
-    background: rgba(0, 255, 255, 0.1);
-    color: #00ffff;
+  background: rgba(0, 255, 255, 0.1);
+  color: #00ffff;
 }
 
 /* 表示時 */
 .menu.show {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 /* メイン */
 main {
-    padding: 1rem 1rem;
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
+  padding: 1rem 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 main h1 {
-    text-align: center;
-    font-size: 1.8rem;
-    color: #00ffff;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
-    margin-bottom: 0.5rem;
-    padding-left: 15px;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  margin-bottom: 0.5rem;
+  padding-left: 15px;
 }
 
 
 main h2 {
-    text-align: center;
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    color: #aaa;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #aaa;
 }
 
 /* リンクリスト */
 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
 }
 
 ul li {
-    display: block;
-    padding: 0.2em 0;
-    margin: 0.5em 0;
+  display: block;
+  padding: 0.2em 0;
+  margin: 0.5em 0;
 }
 
 ul li a {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    text-decoration: none;
-    text-align: center;
-    color: #fff;
-    background: #00aaff;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 170, 255, 0.3);
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  background: #00aaff;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 170, 255, 0.3);
 }
 
 ul li a:hover {
-    background: #0088cc;
-    box-shadow: 0 6px 12px rgba(0, 136, 204, 0.4);
-    transform: translateY(-2px);
+  background: #0088cc;
+  box-shadow: 0 6px 12px rgba(0, 136, 204, 0.4);
+  transform: translateY(-2px);
 }
 
 /* フッター */
 footer {
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.85rem;
-    color: #666;
-    border-top: 1px solid #ddd;
-    margin-top: 2rem;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: #666;
+  border-top: 1px solid #ddd;
+  margin-top: 2rem;
 }
 
 /* フォーム全体を中央寄せ */
 form#rankForm {
-    max-width: 450px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    position: relative;
-    overflow: hidden;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
 }
 
 /* ラベルと入力を縦並びに揃える */
 form#rankForm label,
 form#rankForm input,
 form#rankForm p {
-    display: block;
-    width: 100%;
-    margin-bottom: 0.3rem;
+  display: block;
+  width: 100%;
+  margin-bottom: 0.3rem;
 }
 
 /* 入力フィールド（テキストボックス・数値入力） */
 form#rankForm input {
-    padding: 0.7rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    box-sizing: border-box;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
 }
 
 /* フォーム内のpタグの下に区切り線 */
 form#rankForm p {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 0.5rem;
-    margin-bottom: 0.8rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 /* フォーム内のspan文字を強調 */
 form#rankForm span {
-    font-weight: bold;
-    color: #ffcc00;
-    font-size: 1.3rem;
-    text-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
+  font-weight: bold;
+  color: #ffcc00;
+  font-size: 1.3rem;
+  text-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
 }
 
 
 /* ボタンも中央寄せ */
 form#rankForm button {
-    display: block;
-    margin: 1rem auto 0 auto;
-    padding: 0.7rem 1.5rem;
-    font-size: 1rem;
-    background: #00aaff;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  display: block;
+  margin: 1rem auto 0 auto;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background: #00aaff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 form#rankForm button:hover {
-    background: #0088cc;
+  background: #0088cc;
 }
 
 /* 結果表示エリア */
 #result {
-    max-width: 400px;
-    margin: 1.5rem auto;
-    padding: 1rem 1.2rem;
-    background: #e0f7fa;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
+  max-width: 400px;
+  margin: 1.5rem auto;
+  padding: 1rem 1.2rem;
+  background: #e0f7fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
 /* 結果の各行 */
 #result p {
-    margin: 0.8rem 0;
-    font-size: 1rem;
-    color: #333;
+  margin: 0.8rem 0;
+  font-size: 1rem;
+  color: #333;
 }
 
 /* 結果の数値部分 */
 #result span {
-    font-weight: bold;
-    border-radius: 4px;
+  font-weight: bold;
+  border-radius: 4px;
 }
 
 /* 必須入力記号 */
 #requiredField {
-    color: #ff0000;
+  color: #ff0000;
 }
 
 /* 個別算出ボタン */
 form#rankForm button.separateBtn {
-    font-size: 0.9rem;
-    padding: 0.2rem 0.6rem;
-    background: #00ccff;
-    box-shadow: 0 2px 4px rgba(0, 170, 255, 0.3);
+  font-size: 0.9rem;
+  padding: 0.2rem 0.6rem;
+  background: #00ccff;
+  box-shadow: 0 2px 4px rgba(0, 170, 255, 0.3);
 }
 
 /* ホバー時 */
 form#rankForm button.separateBtn:hover {
-    background: #0099cc;
-    box-shadow: 0 3px 6px rgba(0, 136, 204, 0.4);
-    transform: translateY(-1px);
+  background: #0099cc;
+  box-shadow: 0 3px 6px rgba(0, 136, 204, 0.4);
+  transform: translateY(-1px);
 }
+
+/* 段位目安表のコンテナ */
+.rank-reference {
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+details {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+summary {
+  padding: 1rem;
+  cursor: pointer;
+  color: #00ffff;
+  font-weight: bold;
+  list-style: none;
+  text-align: center;
+}
+
+.details-content {
+  padding: 5px;
+  /* 余白を最小限に */
+}
+
+.rank-compact-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.85rem;
+  /* デフォルトの文字サイズ */
+}
+
+.rank-compact-table th,
+.rank-compact-table td {
+  border-bottom: 1px solid #30363d;
+  padding: 8px 2px;
+  text-align: center;
+  word-break: break-all;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.rank-compact-table th {
+  background: rgba(0, 170, 255, 0.1);
+  color: #00ffff;
+}
+
+/* 各列の幅を調整（モチーフ列を少し広めに、数値列を均等に） */
+.rank-compact-table th:nth-child(1) {
+  width: 15%;
+}
+
+/* 段位 */
+.rank-compact-table th:nth-child(2) {
+  width: 25%;
+}
+
+/* モチーフ */
+.rank-compact-table th:nth-child(3) {
+  width: 20%;
+}
+
+/* 乱入 */
+.rank-compact-table th:nth-child(4) {
+  width: 20%;
+}
+
+/* 撃墜 */
+.rank-compact-table th:nth-child(5) {
+  width: 20%;
+}
+
+/* 極め */
 
 /* ===== レスポンシブ対応 ===== */
 @media (max-width: 600px) {
-    header {
-        height: 60px;
-        padding: 0 1rem;
-    }
+  header {
+    height: 60px;
+    padding: 0 1rem;
+  }
 
-    header h1 {
-        font-size: 1.2rem;
-    }
+  header h1 {
+    font-size: 1.2rem;
+  }
 
-    .menu-toggle {
-        width: 30px;
-        height: 24px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0;
-    }
+  .menu-toggle {
+    width: 30px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
 
-    .menu-toggle span {
-        height: 3px;
-        width: 100%;
-        background: #fff;
-        border-radius: 2px;
-        display: block;
-        margin: 4px 0;
-    }
+  .menu-toggle span {
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 2px;
+    display: block;
+    margin: 4px 0;
+  }
 
-    .menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
 
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
 
-    .menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
 
-    main h2 {
-        font-size: 1.0rem;
-    }
+  main h2 {
+    font-size: 1.0rem;
+  }
 
-    .menu {
-        display: none;
-        flex-direction: column;
-        color: #fff;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        border: 1px solid #ccc;
-        padding: 10px;
-    }
+  .menu {
+    display: none;
+    flex-direction: column;
+    color: #fff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
 
-    .menu.show {
-        display: flex;
-    }
+  .menu.show {
+    display: flex;
+  }
 
-    .menu-toggle {
-        display: block;
-    }
+  .menu-toggle {
+    display: block;
+  }
 
-    ul li a {
-        font-size: 0.95rem;
-        padding: 0.7rem 1rem;
-    }
+  ul li a {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
 
-    form#rankForm {
-        padding: 1rem;
-    }
+  form#rankForm {
+    padding: 1rem;
+  }
 
-    form#rankForm label,
-    form#rankForm input,
-    form#rankForm p {
-        font-size: 0.95rem;
-    }
+  form#rankForm label,
+  form#rankForm input,
+  form#rankForm p {
+    font-size: 0.95rem;
+  }
 
-    form#rankForm button {
-        font-size: 0.95rem;
-        padding: 0.6rem 1.2rem;
-    }
+  form#rankForm button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
 
-    #result {
-        padding: 0.8rem 1rem;
-        font-size: 0.95rem;
-    }
+  #result {
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+  }
 
-    #result p {
-        font-size: 0.95rem;
-    }
+  #result p {
+    font-size: 0.95rem;
+  }
 
-    #result span {
-        font-size: 0.95rem;
-    }
+  #result span {
+    font-size: 0.95rem;
+  }
 
-    form#rankForm button.smallBtn {
-        font-size: 0.7rem;
-        padding: 0.25rem 0.6rem;
-    }
+  form#rankForm button.smallBtn {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .rank-compact-table {
+    font-size: 0.75rem;
+  }
+
+  .rank-compact-table td {
+    padding: 6px 1px;
+  }
 }
 
 @media (min-width: 900px) {
-    main {
-        text-align: left;
-    }
+  main {
+    text-align: left;
+  }
 
-    ul li {
-        margin: 0.5rem 0;
-    }
+  ul li {
+    margin: 0.5rem 0;
+  }
 }

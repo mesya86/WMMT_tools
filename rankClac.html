@@ -2,67 +2,194 @@
 <html lang="ja">
 
 <head>
-    <meta charset="utf-8">
-    <title>湾岸ミッドナイト　便利ツール - 段位計算</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <title>湾岸ミッドナイト　便利ツール - 段位計算</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header>
-        <h1><a href="index.html">湾岸ミッドナイト　便利ツール</a></h1>
-        <!-- ハンバーガーメニュー -->
-        <nav class="navbar">
-            <div class="menu-toggle" id="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+  <header>
+    <h1><a href="index.html">湾岸ミッドナイト　便利ツール</a></h1>
+    <!-- ハンバーガーメニュー -->
+    <nav class="navbar">
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
 
-    <!-- オーバーレイ -->
-    <div id="overlay"></div>
+  <!-- オーバーレイ -->
+  <div id="overlay"></div>
 
-    <!-- スライドメニュー -->
-    <ul class="menu" id="menu">
-        <li><a href="rankManage2.html">ランク管理（5DX+以前）</a></li>
-        <li><a href="rankManage.html">ランク管理（6以降）</a></li>
-        <li><a href="rankClac.html">段位計算</a></li>
-        <li><a href="recordClac.html">戦績計算</a></li>
-    </ul>
+  <!-- スライドメニュー -->
+  <ul class="menu" id="menu">
+    <li><a href="rankManage2.html">ランク管理（5DX+以前）</a></li>
+    <li><a href="rankManage.html">ランク管理（6以降）</a></li>
+    <li><a href="rankClac.html">段位計算</a></li>
+    <li><a href="recordClac.html">戦績計算</a></li>
+  </ul>
 
-    <main>
-        <h1>段位計算</h2>
-            <h2>勲章の個数を入力し、現在の段位と次の段位までのポイントを提示します</h2>
-            <!-- 入力フォーム -->
-            <form id="rankForm" method="post">
-                <!-- 3台撃墜勲章 -->
-                <label for="first">3台撃墜勲章</label>
-                <input type="number" id="first" name="first">
-                <!-- 2台撃墜勲章 -->
-                <label for="second">2台撃墜勲章</label>
-                <input type="number" id="second" name="second">
-                <!-- 1台撃墜勲章 -->
-                <label for="third">1台撃墜勲章</label>
-                <input type="number" id="third" name="third">
-                <!-- 乱入勲章 -->
-                <label for="fourth">乱入勲章</label>
-                <input type="number" id="fourth" name="fourth">
+  <main>
+    <h1>段位計算</h2>
+      <h2>勲章の個数を入力し、現在の段位と次の段位までのポイントを提示します</h2>
+      <!-- 入力フォーム -->
+      <form id="rankForm" method="post">
+        <!-- 3台撃墜勲章 -->
+        <label for="first">3台撃墜勲章</label>
+        <input type="number" id="first" name="first">
+        <!-- 2台撃墜勲章 -->
+        <label for="second">2台撃墜勲章</label>
+        <input type="number" id="second" name="second">
+        <!-- 1台撃墜勲章 -->
+        <label for="third">1台撃墜勲章</label>
+        <input type="number" id="third" name="third">
+        <!-- 乱入勲章 -->
+        <label for="fourth">乱入勲章</label>
+        <input type="number" id="fourth" name="fourth">
 
-                <button type="submit">算出する</button>
-            </form>
+        <button type="submit">算出する</button>
+      </form>
 
-            <!-- 結果表示エリア -->
-            <div id="result">
-                <p>現在のポイント: <span id="point">-</span>P</p>
-                <p>現在の段位: <span id="rankName"></span><span id="rankCount"></span></p>
-                <p>次の段位まで残り: <span id="remainingPoint">-</span>P</p>
-            </div>
-    </main>
-    <footer>
-        <!-- フッター情報 -->
-    </footer>
+      <!-- 結果表示エリア -->
+      <div id="result">
+        <p>現在のポイント: <span id="point">-</span>P</p>
+        <p>現在の段位: <span id="rankName"></span><span id="rankCount"></span></p>
+        <p>次の段位まで残り: <span id="remainingPoint">-</span>P</p>
+      </div>
+
+      <!-- 段位一覧 -->
+      <div class="rank-reference">
+        <details>
+          <summary>段位目安表を表示</summary>
+          <div class="details-content">
+            <table class="rank-compact-table">
+              <thead>
+                <tr>
+                  <th>段位</th>
+                  <th>モチーフ</th>
+                  <th>乱入</th>
+                  <th>撃墜</th>
+                  <th>極め</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>初段</td>
+                  <td>鷹</td>
+                  <td>200</td>
+                  <td>400</td>
+                  <td>600</td>
+                </tr>
+                <tr>
+                  <td>弐段</td>
+                  <td>蛇</td>
+                  <td>900</td>
+                  <td>1100</td>
+                  <td>1300</td>
+                </tr>
+                <tr>
+                  <td>参段</td>
+                  <td>闘犬</td>
+                  <td>1600</td>
+                  <td>1800</td>
+                  <td>2000</td>
+                </tr>
+                <tr>
+                  <td>四段</td>
+                  <td>豹</td>
+                  <td>2450</td>
+                  <td>2700</td>
+                  <td>2950</td>
+                </tr>
+                <tr>
+                  <td>伍段</td>
+                  <td>猛牛</td>
+                  <td>3400</td>
+                  <td>3650</td>
+                  <td>3900</td>
+                </tr>
+                <tr>
+                  <td>六段</td>
+                  <td>ゴリラ</td>
+                  <td>4500</td>
+                  <td>4800</td>
+                  <td>5100</td>
+                </tr>
+                <tr>
+                  <td>七段</td>
+                  <td>狼</td>
+                  <td>6000</td>
+                  <td>6400</td>
+                  <td>6800</td>
+                </tr>
+                <tr>
+                  <td>八段</td>
+                  <td>マンモス</td>
+                  <td>8400</td>
+                  <td>9000</td>
+                  <td>9600</td>
+                </tr>
+                <tr>
+                  <td>九段</td>
+                  <td>パンダ</td>
+                  <td>11900</td>
+                  <td>12700</td>
+                  <td>13500</td>
+                </tr>
+                <tr>
+                  <td>十段</td>
+                  <td>ライオン</td>
+                  <td>16500</td>
+                  <td>17500</td>
+                  <td>20000</td>
+                </tr>
+                <tr>
+                  <td>十一段</td>
+                  <td>ヌエ</td>
+                  <td>25000</td>
+                  <td>30000</td>
+                  <td>35000</td>
+                </tr>
+                <tr>
+                  <td>十二段</td>
+                  <td>ヤマタノ<br>オロチ</td>
+                  <td>45000</td>
+                  <td>55000</td>
+                  <td>65000</td>
+                </tr>
+                <tr>
+                  <td>十三段</td>
+                  <td>鳳凰</td>
+                  <td>85000</td>
+                  <td>105000</td>
+                  <td>125000</td>
+                </tr>
+                <tr>
+                  <td>十四段</td>
+                  <td>神竜</td>
+                  <td>155000</td>
+                  <td>185000</td>
+                  <td>215000</td>
+                </tr>
+                <tr>
+                  <td>十五段</td>
+                  <td>鬼</td>
+                  <td>255000</td>
+                  <td>295000</td>
+                  <td>335000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+  </main>
+  <footer>
+    <!-- フッター情報 -->
+  </footer>
 </body>
 
 </html>
