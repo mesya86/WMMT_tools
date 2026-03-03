@@ -327,6 +327,17 @@ form#rankForm button.separateBtn:hover {
   transform: translateY(-1px);
 }
 
+/* 備考用 */
+form#rankForm span.note {
+  border-bottom: none;
+  margin-top: -0.8rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: #00ccff;
+  text-shadow: 0 0;
+  padding-bottom: 0;
+}
+
 /* 段位目安表のコンテナ */
 .rank-reference {
   max-width: 500px;
