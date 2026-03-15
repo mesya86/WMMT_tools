@@ -239,15 +239,23 @@ form#rankForm p {
   margin-bottom: 0.3rem;
 }
 
-/* 入力フィールド（テキストボックス・数値入力） */
+/* 入力フィールド（テキストボックス・日付入力共通） */
 form#rankForm input {
+  width: 100%;
+  box-sizing: border-box;
   padding: 0.7rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
-  box-sizing: border-box;
-  width: 100%;
   display: block;
+  -webkit-appearance: none;
+}
+
+/* iOSの日付入力欄内のテキスト位置を修正 */
+input[type="date"]::-webkit-date-and-time-value {
+  margin: 0;
+  padding: 0;
+  min-height: 1.2em;
 }
 
 /* フォーム内のpタグの下に区切り線 */
@@ -416,14 +424,14 @@ summary {
 
 /* 入力フォームの微調整 */
 #searchDate {
-    border: 1px solid #00aaff;
-    outline: none;
-    transition: box-shadow 0.3s ease;
+  border: 1px solid #00aaff;
+  outline: none;
+  transition: box-shadow 0.3s ease;
 }
 
 #searchDate:focus {
-    box-shadow: 0 0 10px rgba(0, 170, 255, 0.6);
-    border-color: #00ffff;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.6);
+  border-color: #00ffff;
 }
 
 /* 検索結果エリアのタイトル */
