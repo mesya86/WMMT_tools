@@ -20,3 +20,17 @@ document.getElementById("rankForm").addEventListener("submit", function (event) 
   // HTML に結果を表示
   document.getElementById("record").textContent = record;
 });
+
+/* リセット処理 */
+document.getElementById("resetBtn").addEventListener("click", function() {
+  // すべての入力フォームを空にする
+  const form = document.getElementById("rankForm");
+  form.reset();
+
+  // 結果表示エリアを初期状態に戻す
+  document.getElementById("record").textContent = "";
+
+  // 最初の入力欄にフォーカスを戻す
+  document.getElementById("first").focus();
+});
+

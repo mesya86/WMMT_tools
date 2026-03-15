@@ -231,3 +231,18 @@ document.getElementById("rankForm").addEventListener("submit", function (event) 
     }*/
   }
 });
+
+/* リセット処理 */
+document.getElementById("resetBtn").addEventListener("click", function() {
+  // すべての入力フォームを空にする
+  const form = document.getElementById("rankForm");
+  form.reset();
+
+  // 結果表示エリアを初期状態に戻す
+  document.getElementById("remainingStoryCount").textContent = "-";
+  document.getElementById("remainingOnlineGhostCount").textContent = "-";
+  document.getElementById("remainingVSPlayer").textContent = "-";
+
+  // 最初の入力欄にフォーカスを戻す
+  document.getElementById("first").focus();
+});

@@ -158,7 +158,6 @@ main h1 {
   color: #00ffff;
   text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
   margin-bottom: 0.5rem;
-  padding-left: 15px;
 }
 
 
@@ -264,7 +263,6 @@ form#rankForm span {
   text-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
 }
 
-
 /* ボタンも中央寄せ */
 form#rankForm button {
   display: block;
@@ -362,7 +360,6 @@ summary {
 
 .details-content {
   padding: 5px;
-  /* 余白を最小限に */
 }
 
 .rank-compact-table {
@@ -370,7 +367,6 @@ summary {
   border-collapse: collapse;
   table-layout: fixed;
   font-size: 1.0rem;
-  /* デフォルトの文字サイズ */
 }
 
 .rank-compact-table th,
@@ -414,6 +410,142 @@ summary {
 }
 
 /* 極め */
+/**/
+
+/* 入力フォームの微調整 */
+#searchDate {
+    border: 1px solid #00aaff;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+#searchDate:focus {
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.6);
+    border-color: #00ffff;
+}
+
+/* 検索結果エリアのタイトル */
+#titleResult {
+  margin-top: 2rem;
+}
+
+#titleResult.show {
+  display: block;
+}
+
+#titleResult h3 {
+  color: #00ffff;
+  padding-left: 10px;
+  display: inline-block;
+  width: fit-content;
+  margin: 0 auto 1.5rem auto;
+}
+
+/* 称号カードのコンテナ調整 */
+#titleCardContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: left;
+  justify-content: center;
+}
+
+/* 称号カード内のヘッダーライン */
+.title-header-line {
+    display: block;
+    font-size: 0.9rem;
+    color: #00aaff;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #00ffff;
+    padding-bottom: 3px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* 称号名自体の微調整 */
+.title-text {
+    display: block;
+    padding: 0.5rem 0;
+}
+
+/* リセットボタン */
+#resetBtn {
+    background: #30363d !important;
+    color: #c9d1d9 !important;
+    border: 1px solid #484f58 !important;
+}
+
+#resetBtn:hover {
+    background: #444c56 !important;
+    border-color: #8b949e !important;
+}
+
+#resetBtn.small {
+  display: inline-block;
+  width: auto;
+  margin: 0.5rem auto 0 auto;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  background: #333;
+  color: #aaa;
+  border: 1px solid #444;
+}
+
+#resetBtn.small:hover {
+  background: #444;
+  color: #fff;
+  border-color: #00aaff;
+}
+
+/* 月選択エリアのコンテナ */
+.selector-container {
+    max-width: 300px;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+}
+
+/* 月選択セレクトボックス*/
+#monthSelector {
+    width: 100%;
+    padding: 0.8rem;
+    background: #161b22;
+    color: #00ffff;
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    appearance: none;
+    text-align: center;
+    outline: none;
+}
+
+#monthSelector:focus {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+#titleTable {
+    display: none;
+}
+
+/* 各列の幅 */
+.rank-compact-table th.col-date,
+.rank-compact-table td.col-date {
+    width: 15%;
+}
+
+.rank-compact-table th.col-even,
+.rank-compact-table td.col-even,
+.rank-compact-table th.col-odd,
+.rank-compact-table td.col-odd {
+    width: 42%;
+    text-align: left;
+    white-space: normal;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    padding: 10px 8px;
+}
 
 /* ===== レスポンシブ対応 ===== */
 @media (max-width: 600px) {
@@ -526,13 +658,22 @@ summary {
   .rank-compact-table td {
     padding: 6px 1px;
   }
+
+  #titleCardContainer {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 100%;
+  }
+
+  .rank-compact-table th.col-even,
+  .rank-compact-table td.col-even,
+  .rank-compact-table th.col-odd,
+  .rank-compact-table td.col-odd {
+    font-size: 0.75rem;
+    padding: 8px 4px;
+  }
 }
 
 @media (min-width: 900px) {
-  main {
-    text-align: left;
-  }
-
   ul li {
     margin: 0.5rem 0;
   }

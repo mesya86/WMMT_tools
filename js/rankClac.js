@@ -85,3 +85,19 @@ document.getElementById("rankForm").addEventListener("submit", function (event) 
   document.getElementById("rankCount").textContent = rankNamesJP[level];
   document.getElementById("remainingPoint").textContent = nextPoint;
 });
+
+/* リセット処理 */
+document.getElementById("resetBtn").addEventListener("click", function() {
+  // すべての入力フォームを空にする
+  const form = document.getElementById("rankForm");
+  form.reset();
+
+  // 結果表示エリアを初期状態に戻す
+  document.getElementById("point").textContent = "-";
+  document.getElementById("rankName").textContent = "";
+  document.getElementById("rankCount").textContent = "";
+  document.getElementById("remainingPoint").textContent = "-";
+
+  // 最初の入力欄にフォーカスを戻す
+  document.getElementById("first").focus();
+});

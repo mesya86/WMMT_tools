@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>湾岸ミッドナイト　便利ツール - 日付称号一覧</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <h1><a href="index.html">湾岸ミッドナイト　便利ツール</a></h1>
+    <!-- ハンバーガーメニュー -->
+    <nav class="navbar">
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- オーバーレイ -->
+  <div id="overlay"></div>
+
+  <!-- スライドメニュー -->
+  <ul class="menu" id="menu"></ul>
+
+  <main>
+    <h1>日付称号一覧</h1>
+
+    <div class="selector-container">
+      <select id="monthSelector">
+        <option value="">月を選択</option>
+        <option value="01">1月</option>
+        <option value="02">2月</option>
+        <option value="03">3月</option>
+        <option value="04">4月</option>
+        <option value="05">5月</option>
+        <option value="06">6月</option>
+        <option value="07">7月</option>
+        <option value="08">8月</option>
+        <option value="09">9月</option>
+        <option value="10">10月</option>
+        <option value="11">11月</option>
+        <option value="12">12月</option>
+      </select>
+    </div>
+
+    <div id="dateTitleResult">
+      <table class="rank-compact-table" id="titleTable">
+        <thead>
+          <tr>
+            <th class="col-date">日付</th>
+            <th class="col-even">偶数年</th>
+            <th class="col-odd">奇数年</th>
+          </tr>
+        </thead>
+        <tbody id="titleTableBody">
+          </tbody>
+      </table>
+    </div>
+  </main>
+  <footer>
+    <!-- フッター情報 -->
+  </footer>
+</body>
+
+</html>
+<script src="js/menus.js"></script>
+<script src="js/titles.js"></script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>湾岸ミッドナイト　便利ツール - 日付称号検索</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+      <h1><a href="index.html">湾岸ミッドナイト　便利ツール</a></h1>
+      <!-- ハンバーガーメニュー -->
+      <nav class="navbar">
+          <div class="menu-toggle" id="menu-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+      </nav>
+  </header>
+
+  <!-- オーバーレイ -->
+  <div id="overlay"></div>
+
+  <!-- スライドメニュー -->
+  <ul class="menu" id="menu"></ul>
+
+  <main>
+    <h1>日付称号検索</h1>
+    <h2>日付または単語を入力することで、該当する日付称号を提示します</h2>
+
+    <!-- 入力フォーム -->
+    <form id="rankForm" onsubmit="return false;">
+      <label for="searchDate">検索する日付</label>
+      <input type="date" id="searchDate" name="searchDate" required>
+
+      <p style="margin: 1rem 0; border-bottom: 1px dashed #333;">または</p>
+
+      <label for="searchWord">キーワードで検索</label>
+      <input type="text" id="searchWord" placeholder="キーワードを入力">
+      <button type="button" id="searchBtn">検索する</button>
+      <button type="button" id="resetBtn" class="small">リセット</button>
+    </form>
+
+    <div id="titleResult">
+      <h3>該当する称号</h3>
+      <div id="titleCardContainer"></div>
+    </div>
+</main>
+
+  <footer>
+    <!-- フッター情報 -->
+  </footer>
+
+  <script src="js/titleSearch.js"></script>
+  <script src="js/menus.js"></script>
+</body>
+
+</html>
