@@ -242,7 +242,4 @@ document.getElementById("resetBtn").addEventListener("click", function() {
   document.getElementById("remainingStoryCount").textContent = "-";
   document.getElementById("remainingOnlineGhostCount").textContent = "-";
   document.getElementById("remainingVSPlayer").textContent = "-";
-
-  // 最初の入力欄にフォーカスを戻す
-  document.getElementById("first").focus();
 });

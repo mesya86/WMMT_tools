@@ -29,8 +29,5 @@ document.getElementById("resetBtn").addEventListener("click", function() {
 
   // 結果表示エリアを初期状態に戻す
   document.getElementById("record").textContent = "";
-
-  // 最初の入力欄にフォーカスを戻す
-  document.getElementById("first").focus();
 });
 

@@ -883,8 +883,6 @@ window.addEventListener('DOMContentLoaded', () => {
       }
 
       updateInputFocus();
-
-      if (searchWordInput) searchWordInput.focus();
     });
   }
 });

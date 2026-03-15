@@ -394,7 +394,7 @@ summary {
   color: #00ffff;
 }
 
-/* 各列の幅を調整（モチーフ列を少し広めに、数値列を均等に） */
+/* 各列の幅を調整 */
 .rank-compact-table th:nth-child(1) {
   width: 15%;
 }

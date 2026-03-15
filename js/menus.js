@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <li class="menu-info">
         <hr>
         <p>Created by: @mesya_86</p>
-        <p>Version: 1.5.0</p>
+        <p>Version: 1.5.1</p>
       </li>
     `;
     

@@ -792,7 +792,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // テーブルを表示
       table.style.display = 'table';
       
-      // スッと表示されるアニメーション（お好みで）
+      // スッと表示されるアニメーション
       table.style.opacity = '0';
       setTimeout(() => {
         table.style.transition = 'opacity 0.3s';
